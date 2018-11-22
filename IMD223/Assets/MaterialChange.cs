@@ -4,24 +4,10 @@ using UnityEngine;
 
 public class MaterialChange : MonoBehaviour {
 
-	public Color[] colorBank;
-	public bool mesh;
 
-	// Use this for initialization
-	void Start () {
-
-		int Num = Random.Range (0, colorBank.Length);
-
-		if (mesh) {
-			MeshRenderer m = GetComponent<MeshRenderer> ();
-			m.material.color = colorBank [Num];
-		}
+	void OnTriggerEnter(Collider other)
+	{
+		GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
 	}
-	void onColliderEnter(Collider other)
-		{
-		other.GetComponent<MeshRenderer> ();
-		}
-
-	}
-
+}
 
