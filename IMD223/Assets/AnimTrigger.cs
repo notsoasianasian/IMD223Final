@@ -7,7 +7,7 @@ public class AnimTrigger : MonoBehaviour {
 	public Animator TargetAnimator = null;
 	public string TriggerName = string.Empty;
 
-	void OnTriggerEnter (Collider Col)
+	void OnTriggerEnter (Collider other)
 	{
 		TargetAnimator.SetTrigger (TriggerName);
 	}
